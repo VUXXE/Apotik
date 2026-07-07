@@ -6,6 +6,8 @@ NPM : 202343502436
 
 Aplikasi berbasis web untuk sistem penjualan dan manajemen inventaris apotek (e-commerce). Sistem ini dirancang untuk memudahkan pelanggan dalam membeli obat-obatan secara online, serta memudahkan admin dalam mengelola stok obat dan pesanan.
 
+🔗 **Live Demo:** [https://apotikhanan.gt.tc/](https://apotikhanan.gt.tc/)
+
 ## 📸 Screenshots
 
 ### 🖥️ Halaman Utama (Pelanggan)
@@ -66,7 +68,8 @@ Aplikasi berbasis web untuk sistem penjualan dan manajemen inventaris apotek (e-
    ```
 
 4. **Akses Aplikasi**
-   Buka browser dan akses aplikasi melalui URL: `http://localhost/Apotik`
+   - **Lokal**: Buka browser dan akses aplikasi melalui URL: `http://localhost/Apotik`
+   - **Online (Live Demo)**: [https://apotikhanan.gt.tc/](https://apotikhanan.gt.tc/)
 
 ## 🔐 Akun Default Admin
 
