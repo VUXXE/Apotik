@@ -46,7 +46,7 @@ require_once '../templates/header.php';
 
 <div class="auth-container bg-pink" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--neo-pink); padding: 2rem 1.5rem;">
     <!-- Back to home button -->
-    <a href="../index.php" class="btn-neo btn-neo-sm bg-white" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--black); align-self: center; font-size: 0.75rem; padding: 0.5rem 1rem;">
+    <a href="../index.php" class="btn-neo btn-neo-sm bg-white text-black" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; align-self: center; font-size: 0.75rem; padding: 0.5rem 1rem;">
         <i class="fa-solid fa-arrow-left"></i> KEMBALI KE BERANDA
     </a>
 
@@ -90,7 +90,7 @@ require_once '../templates/header.php';
         
         <p class="text-center font-bold text-sm" style="margin-top: 2.5rem; margin-bottom: 0; color: var(--gray-700);">
             Belum punya akun? <br>
-            <a href="register.php" class="btn-neo btn-neo-sm bg-yellow" style="display: inline-block; margin-top: 0.75rem; color: var(--black); font-size: 0.75rem; padding: 0.5rem 1rem; box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);">Daftar sekarang</a>
+            <a href="register.php" class="btn-neo btn-neo-sm bg-yellow text-black" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1rem; box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);">Daftar sekarang</a>
         </p>
     </div>
 </div>

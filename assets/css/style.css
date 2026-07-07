@@ -233,8 +233,8 @@ a {
 }
 
 .btn-neo:hover {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--black) !important;
+    color: var(--white) !important;
 }
 
 .btn-neo:active {

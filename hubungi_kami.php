@@ -90,8 +90,8 @@ require_once 'templates/header.php';
                             <textarea required rows="5" class="input-neo"></textarea>
                         </div>
 
-                        <button type="submit" class="btn-neo btn-neo-lg bg-cyan contact-submit-button"
-                            style="color: var(--black); margin-top: 1rem;">
+                        <button type="submit" class="btn-neo btn-neo-lg bg-cyan text-black contact-submit-button"
+                            style="margin-top: 1rem;">
                             Kirim Sekarang <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>

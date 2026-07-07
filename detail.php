@@ -97,7 +97,7 @@ require_once 'templates/header.php';
                                 </button>
                             </form>
                         <?php else: ?>
-                            <a href="auth/login.php" class="btn-neo btn-neo-lg bg-yellow detail-action-button" style="color: var(--black); text-align: center; display: block;">
+                            <a href="auth/login.php" class="btn-neo btn-neo-lg bg-yellow text-black detail-action-button" style="text-align: center; display: block;">
                                 Login untuk Membeli <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
                             </a>
                         <?php endif; ?>

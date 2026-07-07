@@ -106,7 +106,7 @@ require_once 'templates/header.php';
                     <i class="fa-solid fa-camera"></i> Foto Resep
                 </a>
                 <a href="https://wa.me/6285157839155?text=Halo%20Apotik%20Neo,%20saya%20ingin%20konsultasi%20dengan%20apoteker"
-                    target="_blank" class="btn-neo bg-white cta-button" style="color: var(--black);">
+                    target="_blank" class="btn-neo bg-white text-black cta-button">
                     <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem;"></i> Chat Apoteker
                 </a>
             </div>
