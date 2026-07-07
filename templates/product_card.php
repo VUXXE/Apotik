@@ -18,8 +18,8 @@ $cart_action = (basename($_SERVER['PHP_SELF']) == 'user_home.php') ? 'cart_actio
             <?= strtoupper(htmlspecialchars($row['nama_kategori'])) ?>
         </div>
         <?php if($img_src): ?>
-            <!-- Note: if called from user_home.php, the path to assets is ../assets/img, so we use absolute path /Apotik/ -->
-            <img src="/Apotik/<?= $img_src ?>" alt="<?= htmlspecialchars($row['nama_obat']) ?>" class="product-card-image">
+            <!-- Note: if called from user_home.php, the path to assets is ../assets/img, so we use absolute path via BASE_URL -->
+            <img src="<?= BASE_URL ?>/<?= $img_src ?>" alt="<?= htmlspecialchars($row['nama_obat']) ?>" class="product-card-image">
         <?php else: ?>
             <i class="fa-solid fa-pills text-6xl text-gray-400 drop-shadow-[2px_2px_0_rgba(0,0,0,1)]"></i>
         <?php endif; ?>

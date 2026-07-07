@@ -75,10 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Pesanan Anda (ID: <span class="font-black text-neo-blue">#<?= $id_order ?></span>) telah masuk dan sedang menunggu pembayaran.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="/Apotik/user/riwayat_pesanan.php" class="bg-neo-cyan border-4 border-black px-6 py-4 text-lg font-black uppercase shadow-neo hover:bg-black hover:text-white transition-colors btn-neo flex items-center justify-center gap-2">
+                    <a href="<?= BASE_URL ?>/user/riwayat_pesanan.php" class="bg-neo-cyan border-4 border-black px-6 py-4 text-lg font-black uppercase shadow-neo hover:bg-black hover:text-white transition-colors btn-neo flex items-center justify-center gap-2">
                         <i class="fa-solid fa-clipboard-list"></i> Lihat Pesanan
                     </a>
-                    <a href="/Apotik/index.php" class="bg-neo-pink border-4 border-black px-6 py-4 text-lg font-black uppercase shadow-neo hover:bg-black hover:text-white transition-colors btn-neo flex items-center justify-center gap-2">
+                    <a href="<?= BASE_URL ?>/index.php" class="bg-neo-pink border-4 border-black px-6 py-4 text-lg font-black uppercase shadow-neo hover:bg-black hover:text-white transition-colors btn-neo flex items-center justify-center gap-2">
                         <i class="fa-solid fa-store"></i> Kembali Belanja
                     </a>
                 </div>

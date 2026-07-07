@@ -13,16 +13,16 @@ $page_param = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     
     <!-- Navigation Links -->
     <nav style="display: flex; flex-direction: column; gap: 0.75rem; flex: 1;">
-        <a href="/Apotik/admin/admin_dashboard.php?page=dashboard" class="sidebar-link <?= ($current_page == 'admin_dashboard.php' && $page_param == 'dashboard') ? 'active' : '' ?>">
+        <a href="<?= BASE_URL ?>/admin/admin_dashboard.php?page=dashboard" class="sidebar-link <?= ($current_page == 'admin_dashboard.php' && $page_param == 'dashboard') ? 'active' : '' ?>">
             <i class="fa-solid fa-house"></i> Dashboard
         </a>
-        <a href="/Apotik/admin/admin_dashboard.php?page=obat" class="sidebar-link <?= ($current_page == 'admin_dashboard.php' && $page_param == 'obat') ? 'active' : '' ?>">
+        <a href="<?= BASE_URL ?>/admin/admin_dashboard.php?page=obat" class="sidebar-link <?= ($current_page == 'admin_dashboard.php' && $page_param == 'obat') ? 'active' : '' ?>">
             <i class="fa-solid fa-pills"></i> Data Obat
         </a>
-        <a href="/Apotik/admin/kelola_pesanan.php" class="sidebar-link <?= ($current_page == 'kelola_pesanan.php') ? 'active' : '' ?>">
+        <a href="<?= BASE_URL ?>/admin/kelola_pesanan.php" class="sidebar-link <?= ($current_page == 'kelola_pesanan.php') ? 'active' : '' ?>">
             <i class="fa-solid fa-clipboard-list"></i> Pesanan
         </a>
-        <a href="/Apotik/index.php" class="sidebar-link">
+        <a href="<?= BASE_URL ?>/index.php" class="sidebar-link">
             <i class="fa-solid fa-globe"></i> Beranda Toko
         </a>
     </nav>
@@ -38,7 +38,7 @@ $page_param = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
                 <p class="text-gray-500 font-bold" style="font-size: 0.65rem; margin: 0; letter-spacing: 0.02em;">ADMINISTRATOR</p>
             </div>
         </div>
-        <a href="/Apotik/auth/logout.php" class="sidebar-link logout-btn" style="margin-top: 0.25rem;">
+        <a href="<?= BASE_URL ?>/auth/logout.php" class="sidebar-link logout-btn" style="margin-top: 0.25rem;">
             <i class="fa-solid fa-right-from-bracket"></i> Logout
         </a>
     </div>

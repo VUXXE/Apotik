@@ -30,7 +30,7 @@
                         <h4 class="footer-heading bg-yellow" style="color: var(--black); padding: 0.25rem 0.5rem; display: inline-block; border: 2px solid var(--black); box-shadow: 2px 2px 0 0 #000; margin-bottom: 1.5rem;">Menu</h4>
                         <ul class="footer-list">
                             <li><a href="#" class="footer-link-pink">Tentang Kami</a></li>
-                            <li><a href="/Apotik/index.php" class="footer-link-pink">Katalog Obat</a></li>
+                            <li><a href="<?= BASE_URL ?>/index.php" class="footer-link-pink">Katalog Obat</a></li>
                             <li><a href="#" class="footer-link-pink">Promo Hari Ini</a></li>
                         </ul>
                     </div>
@@ -38,9 +38,9 @@
                     <div>
                         <h4 class="footer-heading bg-cyan" style="color: var(--black); padding: 0.25rem 0.5rem; display: inline-block; border: 2px solid var(--black); box-shadow: 2px 2px 0 0 #000; margin-bottom: 1.5rem;">Bantuan</h4>
                         <ul class="footer-list">
-                            <li><a href="/Apotik/faq.php" class="footer-link-cyan">FAQ</a></li>
-                            <li><a href="/Apotik/syarat_ketentuan.php" class="footer-link-cyan">Syarat & Ketentuan</a></li>
-                            <li><a href="/Apotik/hubungi_kami.php" class="footer-link-cyan">Hubungi Kami</a></li>
+                            <li><a href="<?= BASE_URL ?>/faq.php" class="footer-link-cyan">FAQ</a></li>
+                            <li><a href="<?= BASE_URL ?>/syarat_ketentuan.php" class="footer-link-cyan">Syarat & Ketentuan</a></li>
+                            <li><a href="<?= BASE_URL ?>/hubungi_kami.php" class="footer-link-cyan">Hubungi Kami</a></li>
                         </ul>
                     </div>
                 </div>

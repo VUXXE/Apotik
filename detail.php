@@ -42,7 +42,7 @@ require_once 'templates/header.php';
                         <?= htmlspecialchars($obat['nama_kategori']) ?>
                     </div>
                     <?php if ($img_src): ?>
-                        <img src="/Apotik/<?= $img_src ?>" alt="<?= htmlspecialchars($obat['nama_obat']) ?>" class="product-card-image detail-image">
+                        <img src="<?= BASE_URL ?>/<?= $img_src ?>" alt="<?= htmlspecialchars($obat['nama_obat']) ?>" class="product-card-image detail-image">
                     <?php else: ?>
                         <i class="fa-solid fa-pills text-gray-300 detail-image-icon"></i>
                     <?php endif; ?>
