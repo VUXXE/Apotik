@@ -97,7 +97,7 @@ $q = mysqli_query($koneksi, "SELECT orders.*, users.nama_lengkap
                                     <p class="font-black text-lg" style="margin-top: 0; margin-bottom: 0.5rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.5rem;">
                                         <i class="fa-solid fa-user text-neo-pink"></i> <?= htmlspecialchars($row['nama_lengkap']) ?>
                                     </p>
-                                    <div class="bg-gray-50" style="border: 2.5px solid var(--black); padding: 0.75rem; font-size: 0.825rem; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 2px 2px 0 var(--black);">
+                                    <div class="bg-gray-50" style="border: 2.5px solid var(--black); border-radius: 8px; padding: 0.75rem; font-size: 0.825rem; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 2px 2px 0 var(--black);">
                                         <p style="margin: 0; font-weight: 700;"><i class="fa-solid fa-phone text-gray-500" style="margin-right: 0.4rem;"></i> <?= htmlspecialchars($row['no_hp'] ?? '-') ?></p>
                                         <p style="margin: 0; border-top: 2px dashed var(--gray-300); padding-top: 0.4rem; font-weight: 700; line-height: 1.4;"><i class="fa-solid fa-map-location-dot text-gray-500" style="margin-right: 0.4rem;"></i> <?= htmlspecialchars($row['alamat'] ?? '-') ?></p>
                                     </div>

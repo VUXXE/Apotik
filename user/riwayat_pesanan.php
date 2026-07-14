@@ -76,15 +76,15 @@ $q = mysqli_query($koneksi, "SELECT * FROM orders WHERE id_user = '$id_user' ORD
                             <div class="font-bold space-y-4" style="display: flex; flex-direction: column; gap: 1rem;">
                                 <div>
                                     <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gray-500); margin: 0 0 0.25rem 0;">Penerima</p>
-                                    <p class="bg-white" style="border: 2px solid var(--black); padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($_SESSION['nama_lengkap']) ?></p>
+                                    <p class="bg-white" style="border: 2px solid var(--black); border-radius: 6px; padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($_SESSION['nama_lengkap']) ?></p>
                                 </div>
                                 <div>
                                     <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gray-500); margin: 0 0 0.25rem 0;">Nomor HP</p>
-                                    <p class="bg-white" style="border: 2px solid var(--black); padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($row['no_hp'] ?? '-') ?></p>
+                                    <p class="bg-white" style="border: 2px solid var(--black); border-radius: 6px; padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($row['no_hp'] ?? '-') ?></p>
                                 </div>
                                 <div>
                                     <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gray-500); margin: 0 0 0.25rem 0;">Alamat Tujuan</p>
-                                    <p class="bg-white" style="border: 2px solid var(--black); padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($row['alamat'] ?? '-') ?></p>
+                                    <p class="bg-white" style="border: 2px solid var(--black); border-radius: 6px; padding: 0.5rem; margin: 0; font-size: 1rem; font-weight: 700;"><?= htmlspecialchars($row['alamat'] ?? '-') ?></p>
                                 </div>
                             </div>
                         </div>
