@@ -13,17 +13,6 @@
                             <span class="font-black text-4xl uppercase">Apotik.Neo</span>
                         </div>
                         <p class="font-bold mb-6" style="font-size: 1.25rem; max-w: 28rem;">Solusi kesehatan nomor satu dengan gaya. Anti ribet, anti mahal.</p>
-                        <div class="flex gap-4">
-                            <a href="#" class="footer-social-link">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="#" class="footer-social-link">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                            <a href="#" class="footer-social-link">
-                                <i class="fa-brands fa-tiktok"></i>
-                            </a>
-                        </div>
                     </div>
                     
                     <div>
