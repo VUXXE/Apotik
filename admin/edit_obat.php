@@ -16,12 +16,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stok = (int) $_POST['stok'];
     $tanggal_kadaluarsa = mysqli_real_escape_string($koneksi, $_POST['tanggal_kadaluarsa']);
 
+    // Handle gambar
+    $query_gambar = "";
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
+        $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        $ext = strtolower(pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION));
+        if (in_array($ext, $allowed)) {
+            $gambar = 'obat_' . time() . '.' . $ext;
+            if (!is_dir('../assets/img')) {
+                mkdir('../assets/img', 0777, true);
+            }
+            if (move_uploaded_file($_FILES['gambar']['tmp_name'], '../assets/img/' . $gambar)) {
+                $query_gambar = ", gambar = '$gambar'";
+            }
+        }
+    }
+
     $query = "UPDATE data_obat SET 
                 nama_obat = '$nama_obat', 
                 id_kategori = '$id_kategori', 
                 harga = '$harga', 
                 stok = '$stok', 
                 tanggal_kadaluarsa = '$tanggal_kadaluarsa' 
+                $query_gambar 
                 WHERE id_obat = $id_obat";
 
     if (mysqli_query($koneksi, $query)) {
@@ -70,7 +87,7 @@ require_once '../templates/header.php';
                         <h3 class="font-black uppercase" style="font-size: 1.75rem; margin: 0; letter-spacing: -0.01em;">Edit Data Obat</h3>
                     </div>
 
-                    <form method="POST" action="" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <form method="POST" action="" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 1.25rem;">
                         <div>
                             <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Nama Obat</label>
                             <input type="text" name="nama_obat" value="<?= htmlspecialchars($data['nama_obat']) ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
@@ -104,6 +121,11 @@ require_once '../templates/header.php';
                         <div>
                             <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Tanggal Kadaluarsa</label>
                             <input type="date" name="tanggal_kadaluarsa" value="<?= $data['tanggal_kadaluarsa'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                        </div>
+                        
+                        <div>
+                            <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Gambar (Biarkan kosong jika tidak diubah)</label>
+                            <input type="file" name="gambar" accept="image/*" class="input-neo" style="border-width: 3px; padding: 0.5rem; font-size: 1rem; height: auto !important; background-color: var(--gray-50);">
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
