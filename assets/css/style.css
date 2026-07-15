@@ -537,7 +537,7 @@ details.accordion-neo .content-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 56px; /* primary-nav height (56px) */
+    height: 72px; /* PostHog primary-nav height */
 }
 
 .nav-links {
@@ -1529,7 +1529,7 @@ details.accordion-neo .content-box {
 }
 
 .admin-header {
-    height: 56px; /* primary-nav height */
+    height: 72px; /* PostHog primary-nav height */
     border-bottom: 1px solid var(--hairline) !important;
     background-color: rgba(238, 239, 233, 0.85) !important;
     backdrop-filter: blur(8px) !important;

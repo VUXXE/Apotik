@@ -134,9 +134,9 @@ $q = mysqli_query($koneksi, "SELECT orders.*, users.nama_lengkap
                                 </td>
                                 
                                 <td style="text-align: center; vertical-align: middle; padding: 1rem;">
-                                        <button type="submit" name="update_status" class="btn-neo btn-neo-sm bg-green" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25rem; padding: 0.6rem 0.5rem; color: var(--black); border-width: 2px; box-shadow: 2px 2px 0 var(--black);">
-                                            <i class="fa-solid fa-floppy-disk text-lg"></i>
-                                            <span style="font-size: 0.725rem; font-weight: 900; text-transform: uppercase;">Update</span>
+                                        <button type="submit" name="update_status" class="btn-neo btn-neo-sm bg-green" style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.5rem 0.75rem; color: var(--black); border-width: 2px; box-shadow: 2px 2px 0 var(--black);">
+                                            <i class="fa-solid fa-floppy-disk text-md"></i>
+                                            <span style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Update</span>
                                         </button>
                                     </form>
                                 </td>
