@@ -27,4 +27,3 @@ jobs:
           **/.github*/**
           a.zip
           .env
-          assets/img/**
