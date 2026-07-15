@@ -90,7 +90,7 @@ require_once '../templates/header.php';
         
         <p class="text-center font-bold text-sm" style="margin-top: 2.5rem; margin-bottom: 0; color: var(--gray-700);">
             Sudah punya akun? <br>
-            <a href="login.php" class="btn-neo btn-neo-sm bg-white text-black" style="display: inline-flex; justify-content: center; margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1rem;">Login di sini</a>
+            <a href="login.php" class="btn-neo btn-neo-sm bg-yellow" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 0.75rem; width: 100%;">Login di Sini</a>
         </p>
     </div>
 </div>

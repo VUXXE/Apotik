@@ -1,6 +1,13 @@
 <?php
 require 'config/koneksi.php';
 
+$check_column = mysqli_query($koneksi, "SHOW COLUMNS FROM data_obat LIKE 'gambar'");
+if (mysqli_num_rows($check_column) == 0) {
+    echo "Kolom 'gambar' tidak ditemukan. Menambahkan kolom 'gambar' ke tabel data_obat...<br>";
+    mysqli_query($koneksi, "ALTER TABLE data_obat ADD COLUMN gambar VARCHAR(255) DEFAULT 'default.jpg'");
+    echo "Kolom 'gambar' berhasil ditambahkan!<br><br>";
+}
+
 $updates = [
     1 => 'obat_paracetamol_1782949861671.png',
     2 => 'obat_amoxicillin_1782949878042.png',

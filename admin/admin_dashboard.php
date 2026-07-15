@@ -198,7 +198,7 @@ require_once '../templates/header.php';
                         
                         <div class="flex flex-col gap-4">
                             <?php
-                            $q_popular = mysqli_query($koneksi, "SELECT data_obat.*, kategori_obat.nama_kategori, COALESCE((SELECT SUM(jumlah) FROM order_details WHERE id_obat = data_obat.id_obat), 0) as terjual FROM data_obat LEFT JOIN kategori_obat ON data_obat.id_kategori = kategori_obat.id_kategori ORDER BY terjual DESC, id_obat DESC LIMIT 4");
+                            $q_popular = mysqli_query($koneksi, "SELECT data_obat.*, kategori_obat.nama_kategori, COALESCE((SELECT SUM(jumlah) FROM order_details WHERE id_obat = data_obat.id_obat), 0) as terjual FROM data_obat LEFT JOIN kategori_obat ON data_obat.id_kategori = kategori_obat.id_kategori ORDER BY terjual DESC, id_obat DESC LIMIT 8");
                             if(mysqli_num_rows($q_popular) == 0):
                                 echo '<p class="text-xs font-bold text-gray-400 text-center py-4">Belum ada obat terjual</p>';
                             else:
