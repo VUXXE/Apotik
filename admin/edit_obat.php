@@ -78,84 +78,105 @@ require_once '../templates/header.php';
 
         <!-- Content Area -->
         <div class="admin-content" style="padding: 2rem; flex: 1; display: flex; justify-content: center; align-items: center;">
-            <div class="container" style="max-width: 38rem; margin: 0;">
-                <div class="neo-box bg-white" style="padding: 2.5rem; border-width: 6px; box-shadow: 8px 8px 0px var(--black);">
-                    <div class="flex items-center gap-3 mb-8" style="border-bottom: 4px solid var(--black); padding-bottom: 1.25rem;">
-                        <div class="badge-neo bg-pink" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.5rem; box-shadow: 2px 2px 0 var(--black);">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </div>
-                        <h3 class="font-black uppercase" style="font-size: 1.75rem; margin: 0; letter-spacing: -0.01em;">Edit Data Obat</h3>
+            <div class="container" style="max-width: 64rem; margin: 0 auto; width: 100%;">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="badge-neo bg-pink" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.5rem; box-shadow: 2px 2px 0 var(--black);">
+                        <i class="fa-solid fa-pen-to-square"></i>
                     </div>
+                    <h3 class="font-black uppercase" style="font-size: 1.75rem; margin: 0; letter-spacing: -0.01em;">Edit Produk</h3>
+                </div>
 
-                    <form method="POST" action="" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div>
-                            <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Nama Obat</label>
-                            <input type="text" name="nama_obat" value="<?= htmlspecialchars($data['nama_obat']) ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
-                        </div>
-                        <div>
-                            <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Kategori</label>
-                            <select name="id_kategori" required class="input-neo" style="width: 100%; border-width: 3px; padding: 0.75rem; font-size: 1rem;">
-                                <option value="">-- Pilih --</option>
-                                <?php
-                                $kat = mysqli_query($koneksi, "SELECT * FROM kategori_obat");
-                                while ($k = mysqli_fetch_assoc($kat)) {
-                                    $selected = ($k['id_kategori'] == $data['id_kategori']) ? 'selected' : '';
-                                    echo "<option value='" . $k['id_kategori'] . "' $selected>" . strtoupper($k['nama_kategori']) . "</option>";
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem;">
-                            <div>
-                                <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Harga</label>
-                                <div class="flex" style="margin: 0;">
-                                    <span class="badge-neo bg-gray-200" style="padding: 0.75rem; border-right-width: 0; border-radius: 0; font-weight: 900; font-size: 1rem; border-width: 3px;">Rp</span>
-                                    <input type="number" name="harga" value="<?= $data['harga'] ?>" required class="input-neo" style="border-top-left-radius: 0; border-bottom-left-radius: 0; border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                <form method="POST" action="" enctype="multipart/form-data" style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; align-items: start;">
+                    
+                    <!-- KOLOM KIRI (Informasi & Harga) -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Panel Informasi -->
+                        <div class="neo-box bg-white" style="padding: 2rem; border-width: 4px; box-shadow: 6px 6px 0px var(--black);">
+                            <h4 class="font-black uppercase mb-4 text-lg" style="margin-top: 0; border-bottom: 4px solid var(--black); padding-bottom: 0.5rem;">Informasi Dasar</h4>
+                            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                                <div>
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Nama Obat</label>
+                                    <input type="text" name="nama_obat" value="<?= htmlspecialchars($data['nama_obat']) ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                                </div>
+                                <div>
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Kategori</label>
+                                    <select name="id_kategori" required class="input-neo" style="width: 100%; border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                                        <option value="">-- Pilih --</option>
+                                        <?php
+                                        $kat = mysqli_query($koneksi, "SELECT * FROM kategori_obat");
+                                        while ($k = mysqli_fetch_assoc($kat)) {
+                                            $selected = ($k['id_kategori'] == $data['id_kategori']) ? 'selected' : '';
+                                            echo "<option value='" . $k['id_kategori'] . "' $selected>" . strtoupper(htmlspecialchars($k['nama_kategori'])) . "</option>";
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
-                            <div>
-                                <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Stok</label>
-                                <input type="number" name="stok" value="<?= $data['stok'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                        </div>
+
+                        <!-- Panel Harga & Stok -->
+                        <div class="neo-box bg-white" style="padding: 2rem; border-width: 4px; box-shadow: 6px 6px 0px var(--black);">
+                            <h4 class="font-black uppercase mb-4 text-lg" style="margin-top: 0; border-bottom: 4px solid var(--black); padding-bottom: 0.5rem;">Harga & Stok</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                                <div>
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Harga</label>
+                                    <div class="flex" style="margin: 0;">
+                                        <span class="badge-neo bg-gray-200" style="padding: 0.75rem; border-right-width: 0; border-radius: 0; font-weight: 900; font-size: 1rem; border-width: 3px;">Rp</span>
+                                        <input type="number" name="harga" value="<?= $data['harga'] ?>" required class="input-neo" style="border-top-left-radius: 0; border-bottom-left-radius: 0; border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Stok Tersedia</label>
+                                    <input type="number" name="stok" value="<?= $data['stok'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                                </div>
+                                <div style="grid-column: span 2;">
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Tanggal Kadaluarsa</label>
+                                    <input type="date" name="tanggal_kadaluarsa" value="<?= $data['tanggal_kadaluarsa'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Tanggal Kadaluarsa</label>
-                            <input type="date" name="tanggal_kadaluarsa" value="<?= $data['tanggal_kadaluarsa'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
-                        </div>
-                        
-                        <?php
-                        $img_src = ($data['gambar'] && $data['gambar'] !== 'default.jpg') ? '../assets/img/' . $data['gambar'] : null;
-                        ?>
-                        <div>
-                            <label class="block font-black text-xs mb-2 uppercase tracking-widest text-gray-700">Gambar Saat Ini & Ganti Gambar</label>
-                            <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                    </div>
+
+                    <!-- KOLOM KANAN (Media & Aksi) -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Panel Media -->
+                        <div class="neo-box bg-yellow" style="padding: 2rem; border-width: 4px; box-shadow: 6px 6px 0px var(--black);">
+                            <h4 class="font-black uppercase mb-4 text-lg" style="margin-top: 0; border-bottom: 4px solid var(--black); padding-bottom: 0.5rem;">Media Produk</h4>
+                            
+                            <?php
+                            $img_src = ($data['gambar'] && $data['gambar'] !== 'default.jpg') ? '../assets/img/' . $data['gambar'] : null;
+                            ?>
+                            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; text-align: center;">
                                 <?php if($img_src): ?>
-                                    <div class="neo-box" style="width: 5.5rem; height: 5.5rem; padding: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
+                                    <div class="neo-box bg-white" style="width: 100%; aspect-ratio: 1/1; padding: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-width: 4px; box-shadow: 4px 4px 0 var(--black);">
                                         <img src="<?= $img_src ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="Preview">
                                     </div>
                                 <?php else: ?>
-                                    <div class="neo-box bg-gray-200" style="width: 5.5rem; height: 5.5rem; padding: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
-                                        <i class="fa-solid fa-image text-gray-400" style="font-size: 2rem;"></i>
+                                    <div class="neo-box bg-white" style="width: 100%; aspect-ratio: 1/1; padding: 0; display: flex; align-items: center; justify-content: center; border-width: 4px; box-shadow: 4px 4px 0 var(--black); flex-direction: column; gap: 0.5rem;">
+                                        <i class="fa-solid fa-image text-gray-400" style="font-size: 3rem;"></i>
+                                        <span class="text-xs font-bold text-gray-400 uppercase">Belum Ada Gambar</span>
                                     </div>
                                 <?php endif; ?>
                                 
-                                <div style="flex: 1;">
-                                    <input type="file" name="gambar" accept="image/*" class="input-neo" style="border-width: 3px; padding: 0.5rem; font-size: 0.9rem; height: auto !important; background-color: var(--white); cursor: pointer; width: 100%;">
-                                    <p class="text-xs font-bold text-gray-500 mt-2 mb-1">*Biarkan kosong jika tidak ingin mengubah gambar</p>
+                                <div style="width: 100%; text-align: left;">
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-800">Ubah Gambar</label>
+                                    <input type="file" name="gambar" accept="image/*" class="input-neo" style="border-width: 3px; padding: 0.5rem; font-size: 0.85rem; height: auto !important; background-color: var(--white); cursor: pointer; width: 100%;">
+                                    <p class="text-[0.75rem] font-bold text-gray-700 mt-2 leading-tight" style="font-size: 0.75rem;">*Pilih file baru untuk mengganti gambar. Biarkan kosong jika tidak diubah.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-                            <a href="admin_dashboard.php?page=obat" class="btn-neo bg-white" style="font-size: 1.15rem; padding: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--black); border-width: 3px; box-shadow: 4px 4px 0 var(--black); font-weight: 900;">
-                                Batal <i class="fa-solid fa-xmark"></i>
-                            </a>
-                            <button type="submit" class="btn-neo bg-green" style="font-size: 1.15rem; padding: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--black); border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
-                                Simpan <i class="fa-solid fa-floppy-disk"></i>
+                        <!-- Panel Aksi -->
+                        <div class="neo-box bg-white" style="padding: 1.5rem; border-width: 4px; box-shadow: 6px 6px 0px var(--black); display: flex; flex-direction: column; gap: 1rem;">
+                            <button type="submit" class="btn-neo bg-green" style="font-size: 1.15rem; padding: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--black); border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
+                                <i class="fa-solid fa-floppy-disk"></i> Simpan
                             </button>
+                            <a href="admin_dashboard.php?page=obat" class="btn-neo bg-gray-200" style="font-size: 1rem; padding: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--black); border-width: 3px; font-weight: 900;">
+                                <i class="fa-solid fa-arrow-left"></i> Kembali
+                            </a>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
