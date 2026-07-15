@@ -11,7 +11,7 @@ if (isset($_POST['register'])) {
     if(mysqli_num_rows($cek) > 0) {
         $error = "Username sudah digunakan!";
     } else {
-        $query = "INSERT INTO users (nama_lengkap, username, password, role) VALUES ('$nama_lengkap', '$username', '$password', 'user')";
+        $query = "INSERT INTO users (nama_lengkap, username, password, role) VALUES ('$nama_lengkap', '$username', '$password', 'customer')";
         if (mysqli_query($koneksi, $query)) {
             echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location='login.php';</script>";
             exit();
