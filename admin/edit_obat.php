@@ -123,9 +123,27 @@ require_once '../templates/header.php';
                             <input type="date" name="tanggal_kadaluarsa" value="<?= $data['tanggal_kadaluarsa'] ?>" required class="input-neo" style="border-width: 3px; padding: 0.75rem; font-size: 1rem;">
                         </div>
                         
+                        <?php
+                        $img_src = ($data['gambar'] && $data['gambar'] !== 'default.jpg') ? '../assets/img/' . $data['gambar'] : null;
+                        ?>
                         <div>
-                            <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Gambar (Biarkan kosong jika tidak diubah)</label>
-                            <input type="file" name="gambar" accept="image/*" class="input-neo" style="border-width: 3px; padding: 0.5rem; font-size: 1rem; height: auto !important; background-color: var(--gray-50);">
+                            <label class="block font-black text-xs mb-2 uppercase tracking-widest text-gray-700">Gambar Saat Ini & Ganti Gambar</label>
+                            <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                                <?php if($img_src): ?>
+                                    <div class="neo-box" style="width: 5.5rem; height: 5.5rem; padding: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
+                                        <img src="<?= $img_src ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="Preview">
+                                    </div>
+                                <?php else: ?>
+                                    <div class="neo-box bg-gray-200" style="width: 5.5rem; height: 5.5rem; padding: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-width: 3px; box-shadow: 4px 4px 0 var(--black);">
+                                        <i class="fa-solid fa-image text-gray-400" style="font-size: 2rem;"></i>
+                                    </div>
+                                <?php endif; ?>
+                                
+                                <div style="flex: 1;">
+                                    <input type="file" name="gambar" accept="image/*" class="input-neo" style="border-width: 3px; padding: 0.5rem; font-size: 0.9rem; height: auto !important; background-color: var(--white); cursor: pointer; width: 100%;">
+                                    <p class="text-xs font-bold text-gray-500 mt-2 mb-1">*Biarkan kosong jika tidak ingin mengubah gambar</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
