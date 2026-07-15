@@ -76,14 +76,16 @@ if(isset($_SESSION['cart'])) {
 
             <!-- Right Section: Auth & Cart -->
             <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
+                <?php if(!$is_admin): ?>
+                    <a href="<?= BASE_URL ?>/user/cart.php" class="btn-neo btn-neo-sm bg-white" style="padding: 0.5rem 0.75rem; position: relative; margin: 0; margin-right: 0.25rem;">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span class="badge-neo bg-yellow" style="position: absolute; top: -10px; right: -10px; border-radius: 9999px; padding: 2px 6px; font-size: 10px; font-weight: 900;"><?= $cart_count ?></span>
+                    </a>
+                <?php endif; ?>
+
                 <?php if($is_logged_in): ?>
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <?php if(!$is_admin): ?>
-                            <a href="<?= BASE_URL ?>/user/cart.php" class="btn-neo btn-neo-sm bg-white" style="padding: 0.5rem 0.75rem; position: relative; margin: 0; margin-right: 0.25rem;">
-                                <i class="fa-solid fa-cart-shopping text-lg"></i>
-                                <span class="badge-neo bg-yellow" style="position: absolute; top: -10px; right: -10px; border-radius: 9999px; padding: 2px 6px; font-size: 10px; font-weight: 900;"><?= $cart_count ?></span>
-                            </a>
-                            
                             <div class="user-avatar-neo">
                                 <i class="fa-solid fa-user"></i>
                             </div>

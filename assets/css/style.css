@@ -309,6 +309,10 @@ a {
     border-radius: var(--rounded-md) !important; /* rounded-md (6px) */
 }
 
+.btn-neo i.fa-solid, .btn-neo i.fas {
+    font-weight: 900 !important;
+}
+
 .btn-neo:hover {
     transform: none !important;
     filter: brightness(0.95);
