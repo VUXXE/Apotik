@@ -1,6 +1,9 @@
     <!-- Footer -->
     <?php if (!isset($hide_footer) || !$hide_footer): ?>
-        <?php if (isset($is_admin) && $is_admin): ?>
+        <?php 
+        $is_admin_page = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false);
+        if ($is_admin_page): 
+        ?>
             <!-- No footer in admin mode -->
         <?php else: ?>
             <footer class="footer-neo-block">
@@ -16,7 +19,7 @@
                     </div>
                     
                     <div>
-                        <h4 class="footer-heading bg-yellow" style="color: var(--black); padding: 0.25rem 0.5rem; display: inline-block; border: 2px solid var(--black); box-shadow: 2px 2px 0 0 #000; border-radius: 6px; margin-bottom: 1.5rem;">Menu</h4>
+                        <h4 class="footer-heading bg-yellow">Menu</h4>
                         <ul class="footer-list">
                             <li><a href="#" class="footer-link-pink">Tentang Kami</a></li>
                             <li><a href="<?= BASE_URL ?>/index.php" class="footer-link-pink">Katalog Obat</a></li>
@@ -25,7 +28,7 @@
                     </div>
                     
                     <div>
-                        <h4 class="footer-heading bg-cyan" style="color: var(--black); padding: 0.25rem 0.5rem; display: inline-block; border: 2px solid var(--black); box-shadow: 2px 2px 0 0 #000; border-radius: 6px; margin-bottom: 1.5rem;">Bantuan</h4>
+                        <h4 class="footer-heading bg-cyan">Bantuan</h4>
                         <ul class="footer-list">
                             <li><a href="<?= BASE_URL ?>/faq.php" class="footer-link-cyan">FAQ</a></li>
                             <li><a href="<?= BASE_URL ?>/syarat_ketentuan.php" class="footer-link-cyan">Syarat & Ketentuan</a></li>

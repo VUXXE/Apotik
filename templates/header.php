@@ -22,37 +22,6 @@ if(isset($_SESSION['cart'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Native CSS Stylesheet -->
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
-    <style>
-        /* Base Overrides & Marquee */
-        body {
-            background-color: #FDF9F1;
-        }
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            border-bottom: 4px solid var(--black);
-            background-color: var(--neo-yellow);
-            padding: 1rem 0;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 15s linear infinite;
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
 </head>
 <body>
 
@@ -115,8 +84,8 @@ if(isset($_SESSION['cart'])) {
                                 <span class="badge-neo bg-yellow" style="position: absolute; top: -10px; right: -10px; border-radius: 9999px; padding: 2px 6px; font-size: 10px; font-weight: 900;"><?= $cart_count ?></span>
                             </a>
                             
-                            <div class="neo-box-sm" style="width: 2.25rem; height: 2.25rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 0 var(--black); border-width: 2px; flex-shrink: 0; background-color: var(--neo-pink);">
-                                <i class="fa-solid fa-user text-black" style="font-size: 1rem;"></i>
+                            <div class="user-avatar-neo">
+                                <i class="fa-solid fa-user"></i>
                             </div>
                             <span class="font-black text-xs uppercase hidden md:inline" style="letter-spacing: 0.02em; color: var(--black);"><?= htmlspecialchars($nama_user) ?></span>
                         <?php else: ?>
