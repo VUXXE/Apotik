@@ -37,13 +37,13 @@ require_once '../templates/header.php';
     }
 </style>
 
-<div class="auth-container bg-cyan" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--neo-cyan); padding: 2rem 1.5rem;">
+<div class="auth-container" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: transparent; padding: 2rem 1.5rem;">
     <!-- Back to home button -->
     <a href="../index.php" class="btn-neo btn-neo-sm bg-white text-black" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; align-self: center; font-size: 0.75rem; padding: 0.5rem 1rem;">
         <i class="fa-solid fa-arrow-left"></i> KEMBALI KE BERANDA
     </a>
 
-    <div class="auth-card" style="box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);">
+    <div class="auth-card neo-box bg-white" style="width: 100%; max-width: 400px; padding: 2rem;">
         <!-- Logo Header -->
         <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;">
             <div class="nav-brand-logo bg-yellow" style="width: 2.25rem; height: 2.25rem; border-width: 2px; font-size: 0.875rem;">
@@ -66,31 +66,31 @@ require_once '../templates/header.php';
                 <label class="block font-black text-sm mb-1 uppercase" style="letter-spacing: 0.02em;">Nama Lengkap</label>
                 <div style="position: relative;">
                     <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--gray-600);"><i class="fa-solid fa-id-card"></i></span>
-                    <input type="text" name="nama_lengkap" required class="input-neo" style="width: 100%; padding-left: 2.5rem; box-sizing: border-box;">
+                    <input type="text" name="nama_lengkap" required class="input-neo" style="width: 100%; padding-left: 2.75rem !important; box-sizing: border-box;">
                 </div>
             </div>
             <div>
                 <label class="block font-black text-sm mb-1 uppercase" style="letter-spacing: 0.02em;">Username</label>
                 <div style="position: relative;">
                     <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--gray-600);"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" name="username" required class="input-neo" style="width: 100%; padding-left: 2.5rem; box-sizing: border-box;">
+                    <input type="text" name="username" required class="input-neo" style="width: 100%; padding-left: 2.75rem !important; box-sizing: border-box;">
                 </div>
             </div>
             <div>
                 <label class="block font-black text-sm mb-1 uppercase" style="letter-spacing: 0.02em;">Password</label>
                 <div style="position: relative;">
                     <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--gray-600);"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" name="password" required class="input-neo" style="width: 100%; padding-left: 2.5rem; box-sizing: border-box;">
+                    <input type="password" name="password" required class="input-neo" style="width: 100%; padding-left: 2.75rem !important; box-sizing: border-box;">
                 </div>
             </div>
-            <button type="submit" name="register" class="btn-neo btn-neo-lg bg-blue" style="width: 100%; margin-top: 1rem; color: var(--white); box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);">
+            <button type="submit" name="register" class="btn-neo btn-neo-lg bg-blue" style="width: 100%; margin-top: 1rem; color: var(--white); display: flex; justify-content: center; align-items: center;">
                 Daftar <i class="fa-solid fa-user-plus" style="margin-left: 0.5rem;"></i>
             </button>
         </form>
         
         <p class="text-center font-bold text-sm" style="margin-top: 2.5rem; margin-bottom: 0; color: var(--gray-700);">
             Sudah punya akun? <br>
-            <a href="login.php" class="btn-neo btn-neo-sm bg-white text-black" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1rem; box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);">Login di sini</a>
+            <a href="login.php" class="btn-neo btn-neo-sm bg-white text-black" style="display: inline-flex; justify-content: center; margin-top: 0.75rem; font-size: 0.75rem; padding: 0.5rem 1rem;">Login di sini</a>
         </p>
     </div>
 </div>
