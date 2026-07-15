@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $harga = (int) $_POST['harga'];
     $stok = (int) $_POST['stok'];
     $tanggal_kadaluarsa = mysqli_real_escape_string($koneksi, $_POST['tanggal_kadaluarsa']);
+    $deskripsi = isset($_POST['deskripsi']) ? mysqli_real_escape_string($koneksi, $_POST['deskripsi']) : '';
 
     // Handle gambar
     $query_gambar = "";
@@ -37,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 id_kategori = '$id_kategori', 
                 harga = '$harga', 
                 stok = '$stok', 
-                tanggal_kadaluarsa = '$tanggal_kadaluarsa' 
+                tanggal_kadaluarsa = '$tanggal_kadaluarsa',
+                deskripsi = '$deskripsi'
                 $query_gambar 
                 WHERE id_obat = $id_obat";
 
@@ -110,6 +112,10 @@ require_once '../templates/header.php';
                                         }
                                         ?>
                                     </select>
+                                </div>
+                                <div>
+                                    <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Deskripsi Obat</label>
+                                    <textarea name="deskripsi" class="input-neo" rows="4" style="border-width: 3px; padding: 0.75rem; font-size: 1rem; width: 100%; resize: vertical;"><?= htmlspecialchars($data['deskripsi'] ?? '') ?></textarea>
                                 </div>
                             </div>
                         </div>
