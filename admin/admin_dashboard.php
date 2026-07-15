@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $harga = (int)$_POST['harga'];
     $stok = (int)$_POST['stok'];
     $tanggal_kadaluarsa = mysqli_real_escape_string($koneksi, $_POST['tanggal_kadaluarsa']);
+    $deskripsi = isset($_POST['deskripsi']) ? mysqli_real_escape_string($koneksi, $_POST['deskripsi']) : '';
     
     // Proses Upload Gambar
     $gambar = 'default.jpg';
@@ -28,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    $query = "INSERT INTO data_obat (nama_obat, id_kategori, harga, stok, tanggal_kadaluarsa, gambar) 
-              VALUES ('$nama_obat', '$id_kategori', '$harga', '$stok', '$tanggal_kadaluarsa', '$gambar')";
+    $query = "INSERT INTO data_obat (nama_obat, id_kategori, harga, stok, tanggal_kadaluarsa, deskripsi, gambar) 
+              VALUES ('$nama_obat', '$id_kategori', '$harga', '$stok', '$tanggal_kadaluarsa', '$deskripsi', '$gambar')";
     
     if (mysqli_query($koneksi, $query)) {
         echo "<script>
@@ -388,6 +389,11 @@ require_once '../templates/header.php';
             <div>
                 <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Tgl Kadaluarsa</label>
                 <input type="date" name="tanggal_kadaluarsa" required class="input-neo" style="border-width: 3px; padding: 0.6rem 0.8rem; font-size: 0.95rem;">
+            </div>
+            
+            <div>
+                <label class="block font-black text-xs mb-1 uppercase tracking-widest text-gray-700">Deskripsi Obat</label>
+                <textarea name="deskripsi" class="input-neo" rows="3" style="border-width: 3px; padding: 0.6rem 0.8rem; font-size: 0.95rem; width: 100%; resize: vertical;" placeholder="Tulis indikasi, kegunaan, efek samping, dll..."></textarea>
             </div>
             
             <div>

@@ -16,6 +16,7 @@ CREATE TABLE data_obat (
     stok INT NOT NULL,
     tanggal_kadaluarsa DATE NOT NULL,
     gambar VARCHAR(255) DEFAULT 'default.jpg',
+    deskripsi TEXT,
     FOREIGN KEY (id_kategori) REFERENCES kategori_obat(id_kategori) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
@@ -27,11 +28,11 @@ INSERT INTO kategori_obat (nama_kategori) VALUES
 ('Obat Batuk & Flu');
 
 -- Memasukkan data awal (dummy data) untuk data_obat
-INSERT INTO data_obat (nama_obat, id_kategori, harga, stok, tanggal_kadaluarsa) VALUES 
-('Paracetamol 500mg', 1, 5000, 100, '2025-12-31'),
-('Amoxicillin 500mg', 2, 12000, 50, '2024-10-15'),
-('Vitamin C 1000mg', 3, 15000, 200, '2026-05-20'),
-('Bodrex', 1, 8000, 150, '2025-08-17');
+INSERT INTO data_obat (nama_obat, id_kategori, harga, stok, tanggal_kadaluarsa, deskripsi) VALUES 
+('Paracetamol 500mg', 1, 5000, 100, '2025-12-31', 'Obat penurun panas dan pereda nyeri ringan hingga sedang. Digunakan untuk meredakan sakit kepala, sakit gigi, dan demam.'),
+('Amoxicillin 500mg', 2, 12000, 50, '2024-10-15', 'Antibiotik penisilin yang digunakan untuk mengobati berbagai macam infeksi bakteri, seperti infeksi saluran pernapasan, saluran kemih, dan telinga. Obat keras, harus dengan resep dokter.'),
+('Vitamin C 1000mg', 3, 15000, 200, '2026-05-20', 'Suplemen vitamin C dosis tinggi untuk membantu menjaga daya tahan tubuh dan mempercepat masa pemulihan setelah sakit.'),
+('Bodrex', 1, 8000, 150, '2025-08-17', 'Obat sakit kepala dengan kandungan Paracetamol dan Kafein. Efektif meredakan sakit kepala mencengkeram tanpa menyebabkan kantuk.');
 
 -- Membuat tabel users
 CREATE TABLE users (
