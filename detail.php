@@ -88,19 +88,13 @@ require_once 'templates/header.php';
 
                 <div class="detail-action-container">
                     <?php if ($obat['stok'] > 0): ?>
-                        <?php if (isset($_SESSION['id_user'])): ?>
-                            <form action="user/cart_action.php" method="POST">
-                                <input type="hidden" name="action" value="add">
-                                <input type="hidden" name="id_obat" value="<?= $obat['id_obat'] ?>">
-                                <button type="submit" class="btn-neo btn-neo-lg bg-blue detail-action-button" style="color: var(--white);">
-                                    Masukkan ke Keranjang <i class="fa-solid fa-cart-arrow-down"></i>
-                                </button>
-                            </form>
-                        <?php else: ?>
-                            <a href="auth/login.php" class="btn-neo btn-neo-lg bg-yellow text-black detail-action-button" style="display: flex; align-items: center; justify-content: center; width: 100%; font-size: 1.125rem;">
-                                Login untuk Membeli <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
-                            </a>
-                        <?php endif; ?>
+                        <form action="user/cart_action.php" method="POST">
+                            <input type="hidden" name="action" value="add">
+                            <input type="hidden" name="id_obat" value="<?= $obat['id_obat'] ?>">
+                            <button type="submit" class="btn-neo btn-neo-lg bg-blue detail-action-button" style="color: var(--white); cursor: pointer;">
+                                Masukkan ke Keranjang <i class="fa-solid fa-cart-arrow-down"></i>
+                            </button>
+                        </form>
                     <?php else: ?>
                         <button disabled class="btn-disabled detail-action-button">
                             Stok Habis <i class="fa-solid fa-ban"></i>

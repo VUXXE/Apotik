@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['id_user'])) {
-    header("Location: ../auth/login.php");
-    exit();
-}
 include '../config/koneksi.php';
 
 $cart_items = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];

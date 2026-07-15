@@ -12,7 +12,7 @@ $detail_url = $base_path . 'detail.php?id=' . $row['id_obat'];
 // Tentukan action cart (jika di user_home maka 'cart_action.php', jika di index maka 'user/cart_action.php')
 $cart_action = (basename($_SERVER['PHP_SELF']) == 'user_home.php') ? 'cart_action.php' : 'user/cart_action.php';
 ?>
-<div class="product-card">
+<div class="product-card" onclick="window.location.href='<?= $detail_url ?>';" style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
     <div class="product-card-image-box">
         <div class="badge-neo bg-pink product-card-badge">
             <?= strtoupper(htmlspecialchars($row['nama_kategori'])) ?>
@@ -34,7 +34,7 @@ $cart_action = (basename($_SERVER['PHP_SELF']) == 'user_home.php') ? 'cart_actio
             <span class="product-card-price">Rp <?= number_format($row['harga'], 0, ',', '.') ?></span>
             
             <?php if($row['stok'] > 0): ?>
-                <form action="<?= $cart_action ?>" method="POST">
+                <form action="<?= $cart_action ?>" method="POST" onclick="event.stopPropagation();">
                     <input type="hidden" name="action" value="add">
                     <input type="hidden" name="id_obat" value="<?= $row['id_obat'] ?>">
                     <button type="submit" class="btn-neo btn-neo-sm bg-yellow">
@@ -42,7 +42,7 @@ $cart_action = (basename($_SERVER['PHP_SELF']) == 'user_home.php') ? 'cart_actio
                     </button>
                 </form>
             <?php else: ?>
-                <button disabled class="btn-disabled btn-neo-sm">
+                <button disabled class="btn-disabled btn-neo-sm" onclick="event.stopPropagation();">
                     <i class="fa-solid fa-ban text-xl"></i>
                 </button>
             <?php endif; ?>

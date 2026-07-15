@@ -2,10 +2,6 @@
 session_start();
 include '../config/koneksi.php';
 
-if (!isset($_SESSION['id_user'])) {
-    echo "<script>alert('Anda harus login terlebih dahulu!'); window.location='../auth/login.php';</script>";
-    exit();
-}
 
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : '');
 
@@ -23,17 +19,16 @@ if ($action == 'add') {
         if (isset($_SESSION['cart'][$id_obat])) {
             if ($_SESSION['cart'][$id_obat] < $data['stok']) {
                 $_SESSION['cart'][$id_obat]++;
-                echo "<script>alert('Kuantitas obat berhasil ditambah di keranjang!'); window.history.back();</script>";
-            } else {
-                echo "<script>alert('Stok tidak mencukupi!'); window.history.back();</script>";
             }
         } else {
             $_SESSION['cart'][$id_obat] = 1;
-            echo "<script>alert('Obat berhasil dimasukkan ke keranjang!'); window.history.back();</script>";
         }
-    } else {
-        echo "<script>alert('Stok obat habis!'); window.history.back();</script>";
     }
+    
+    // Redirect silently back to where the user came from
+    $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '../index.php';
+    header("Location: " . $referer);
+    exit();
 }
 elseif ($action == 'remove') {
     $id_obat = (int)$_GET['id_obat'];
